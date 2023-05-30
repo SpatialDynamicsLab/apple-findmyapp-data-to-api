@@ -7,13 +7,13 @@ NULL_STR = 'NULL'
 TIME_FORMAT = '%m/%d/%Y, %H:%M:%S'
 DATE_FORMAT = '%Y-%m-%d'
 # API_ENDPOINT = 'http://localhost:8000/api/v1/devices-data/'
-API_ENDPOINT = 'https://location-based-devices.spatialdynamicslab.xyz/api/v1/devices/'
+API_ENDPOINT = 'https://location-based-devices.spatialdynamicslab.xyz/api/v1/devices/data/'
 KEYS_FOR_API =[
     "id",
     "identifier", 
-    "name", 
-    "location_latitude", 
-    "location_longitude", 
+    "name",
+    "location_longitude", # -6
+    "location_latitude", # 53
     "location_timeStamp",
     "location_positionType", 
     "location_horizontalAccuracy",

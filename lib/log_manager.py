@@ -102,13 +102,13 @@ class LogManager(object):
     @staticmethod
     def post_data_to_api(data):
         filtered_data = dict(
-            (key, value) for key, value in data.items() if
-                             key in KEYS_FOR_API)
+            (key, value) for key, value in data.items() if key in KEYS_FOR_API)
         if filtered_data.get('name') in DEVICE_NAMES_API_TRACKING:
             filtered_data['device_id'] = filtered_data.pop('id')
-            filtered_data['batteryLevel'] = None if filtered_data.get(
-                'batteryLevel') == 'NULL' else filtered_data.get('batteryLevel')
-            get_response = requests.post(API_ENDPOINT, json=filtered_data)
+            filtered_data['batteryLevel'] = None \
+                if filtered_data.get('batteryLevel') == 'NULL' \
+                else filtered_data.get('batteryLevel')
+            requests.post(API_ENDPOINT, json=filtered_data)
             # print('Collecting data... (Use CTRL-C to stop it)')
             # print(get_response.status_code)
             # print(get_response.json())
