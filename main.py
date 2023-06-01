@@ -85,31 +85,39 @@ def main(stdscr):
         null_str=NULL_STR,
         date_format=DATE_FORMAT,
         no_date_folder=args.no_date_folder)
+    print('Collecting data... (Use CTRL+C to stop)')
     while True:
-        log_manager.refresh_log()
-        # latest_log, log_cnt = log_manager.get_latest_log()
-        # table = []
-        # for name, log in latest_log.items():
-        #     latest_time = log[args.timestamp_key]
-        #     if isinstance(latest_time, int) or isinstance(latest_time, float):
-        #         latest_time = datetime.fromtimestamp(
-        #             float(latest_time) / 1000.)
-        #         latest_time = latest_time.strftime(TIME_FORMAT)
-        #     table.append([name, latest_time, log_cnt[name]])
-        # table = tabulate(
-        #     table,
-        #     headers=['Name', 'Last update', 'Log count'],
-        #     tablefmt="github")
-        #
-        # stdscr.erase()
-        # try:
-        #     stdscr.addstr(
-        #         0, 0, f'Current time: {datetime.now().strftime(TIME_FORMAT)}')
-        #     stdscr.addstr(1, 0, table)
-        # except:
-        #     pass
-        # stdscr.refresh()
-        time.sleep(float(args.refresh) / 1000)
+        try:
+            log_manager.refresh_log()
+            # latest_log, log_cnt = log_manager.get_latest_log()
+            # table = []
+            # for name, log in latest_log.items():
+            #     latest_time = log[args.timestamp_key]
+            #     if isinstance(latest_time, int) or isinstance(latest_time, float):
+            #         latest_time = datetime.fromtimestamp(
+            #             float(latest_time) / 1000.)
+            #         latest_time = latest_time.strftime(TIME_FORMAT)
+            #     table.append([name, latest_time, log_cnt[name]])
+            # table = tabulate(
+            #     table,
+            #     headers=['Name', 'Last update', 'Log count'],
+            #     tablefmt="github")
+            #
+            # stdscr.erase()
+            # try:
+            #     stdscr.addstr(
+            #         0, 0, f'Current time: {datetime.now().strftime(TIME_FORMAT)}')
+            #     stdscr.addstr(1, 0, table)
+            # except:
+            #     pass
+            # stdscr.refresh()
+            time.sleep(float(args.refresh) / 1000)
+        except KeyboardInterrupt:
+            print("\n\nExiting by CTRL+C...\n\n")
+            time.sleep(3)
+            quit()
+
+
 
 if __name__ == "__main__":
     try:

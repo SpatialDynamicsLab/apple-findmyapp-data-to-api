@@ -29,7 +29,6 @@ KEYS_FOR_API =[
 # Here you need to add the names of the AirTags or SmartPhones to be tracked
 DEVICE_NAMES_API_TRACKING = [
     'UCD-T1',
-    # 'jpablogomezb-iPhone'
     'UCD-T2',
     'UCD-T3',
     'UCD-T4',
@@ -46,4 +45,8 @@ DEVICE_NAMES_API_TRACKING = [
     'UCD-T15',
     'UCD-T16',
     'UCD-T17',
+    'UCD-T18',
+    'UCD-T19',
+    # 'UCD-T20',
+    # 'UCD-T21',
 ]
